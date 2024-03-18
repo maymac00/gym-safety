@@ -168,8 +168,8 @@ class CartSafeEnv(gym.Env):
             reward = -1.0
 
         constraint_costs = self.constraint_cost(x, x_dot)
-
-        return np.array(self.state), reward, done, {'constraint_costs': constraint_costs}
+        truncated = False
+        return np.array(self.state), reward, done, truncated, {'constraint_costs': constraint_costs}
 
 
 
