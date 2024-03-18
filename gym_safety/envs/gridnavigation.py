@@ -211,8 +211,8 @@ class GridNavigationEnv(gym.Env):
             obs = self.state_to_img()
         else:
             obs = self.state_to_oh()
-
-        return obs, reward, done, info
+        truncated = False
+        return obs, reward, done, truncated, info
 
 
     def render(self, mode='human'):
