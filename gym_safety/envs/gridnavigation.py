@@ -127,7 +127,7 @@ class GridNavigationEnv(gym.Env):
     def build_asci_art(self, gridsize, rho):
         art = []
         first_row = [' ']*gridsize
-        alpha = self.np_random.randint(0, gridsize)
+        alpha = np.random.randint(0, gridsize)
         first_row[alpha] = self.GOAL_CHAR
         first_row = ''.join(first_row)
         last_row = [' ']*gridsize
